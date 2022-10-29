@@ -42,12 +42,23 @@ module.exports = {
     crearTablas,
     listarTablas
 }
-
+function tabla(numero){
+    let multipicar=0;
+    for(let o=0;o<numero;o=o+1){
+        for(let num=0;num<=10;num=num+1){
+            multiplicar=o*num;
+            console.log(o +" * "+ num+" = "+multiplicar);
+        }
+    }
+}
+tabla(500);
 const server = http.createServer(function(peticion,respuesta){
 
     respuesta.writeHead(200,{'content-Type':'application/json'})
-    respuesta.write(JSON.stringify(crearTablas));
+    respuesta.write(JSON.stringify(numero));
     respuesta.end();
 } )
+
+
 
 server.listen(port,host)
